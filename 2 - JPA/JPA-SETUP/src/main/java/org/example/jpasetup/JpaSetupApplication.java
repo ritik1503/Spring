@@ -25,10 +25,20 @@ public class JpaSetupApplication {
 //		storedUsers.add(user1);
 //		Iterable<User> responseOfStoredUsers = userRepository.saveAll(storedUsers);
 //		responseOfStoredUsers.forEach(System.out::println);
+
+		//CUSTOM FINDER
 //        List<User> names = userRepository.findByName("LOL");
 //		names.forEach(e-> System.out.println(e));
-        List<User> names = userRepository.findByNameStartingWith("LOL");
-		names.forEach(e-> System.out.println(e));
+//        List<User> names = userRepository.findByNameStartingWith("LOL");
+//		names.forEach(e-> System.out.println(e));
+
+//
+//		List<User> user = userRepository.getAllUser("Ritik", "LOL");
+//		user.forEach(e-> System.out.println(e));
+
+		//using native query
+		List<User> nativeUser = userRepository.getAllUserNative();
+		nativeUser.forEach(System.out::println);
 
 	}
 
